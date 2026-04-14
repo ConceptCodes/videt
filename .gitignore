@@ -2,3 +2,9 @@ notes.txt
 tests/tester.mp4
 tests/fake.mp4
 ml/yolo
+__pycache__/
+.pytest_cache/
+pytest-of-*/
+*.pyc
+.venv/
+tmp/
