@@ -4,14 +4,14 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class WordToken:
     text: str
     start: float
     end: float
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class MatchWindow:
     word: str
     start: float
@@ -22,7 +22,7 @@ class MatchWindow:
         return max(0.0, self.end - self.start)
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class ProcessingConfig:
     words: set[str]
     lead_padding_ms: int = 220
@@ -32,7 +32,7 @@ class ProcessingConfig:
     beep_volume: float = 0.55
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class TranscriptionConfig:
     model_size: str = "small.en"
     model_dir: Path | None = None
@@ -44,7 +44,7 @@ class TranscriptionConfig:
     num_workers: int = 1
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class JobResult:
     input_path: Path
     output_path: Path
