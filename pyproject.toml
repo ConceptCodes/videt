@@ -1,0 +1,30 @@
+[project]
+name = "videt"
+version = "0.1.0"
+description = "Local-first CLI for automatically bleeping selected words from audio and video files."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "faster-whisper>=1.1.0",
+]
+
+[project.scripts]
+videt = "videt_app.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["videt_app"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"videt_app/data/default_words.txt" = "videt_app/data/default_words.txt"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
