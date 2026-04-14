@@ -8,3 +8,4 @@ pytest-of-*/
 *.pyc
 .venv/
 tmp/
+.tmp
