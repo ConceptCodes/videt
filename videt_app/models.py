@@ -30,6 +30,7 @@ class ProcessingConfig:
     mode: str = "beep"
     beep_frequency: int = 920
     beep_volume: float = 0.55
+    beep_file: Path | None = None
 
 
 @dataclass(frozen=True, slots=True)

@@ -41,6 +41,14 @@ With explicit overrides:
 just run input.mp4 output.mp4 --lead-padding-ms 260 --tail-padding-ms 220
 ```
 
+Custom bleep sound:
+
+```bash
+just run input.mp4 output.mp4 --beep-file ./sounds/bleep.wav
+```
+
+Use a short mono audio file for the cleanest result.
+
 Batch directory:
 
 ```bash

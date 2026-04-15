@@ -32,6 +32,7 @@ def process_media(
             mode=processing.mode,
             beep_frequency=processing.beep_frequency,
             beep_volume=processing.beep_volume,
+            beep_file=processing.beep_file,
         )
 
     return JobResult(

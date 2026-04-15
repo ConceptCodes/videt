@@ -66,6 +66,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mode", choices=["beep", "mute"], default="beep", help="Replacement mode.")
     parser.add_argument("--beep-frequency", type=int, default=920, help="Base frequency for beep mode.")
     parser.add_argument("--beep-volume", type=float, default=0.55, help="Volume for beep mode.")
+    parser.add_argument("--beep-file", type=Path, help="Optional custom audio file to use as the bleep sound.")
     parser.add_argument("--dry-run", action="store_true", help="Analyze and report matches without writing media.")
     parser.add_argument("--report-dir", type=Path, help="Write per-file JSON reports to this directory.")
     parser.add_argument("--recursive", action="store_true", help="Recursively scan an input directory.")
@@ -119,6 +120,7 @@ def main() -> int:
         mode=args.mode,
         beep_frequency=args.beep_frequency,
         beep_volume=args.beep_volume,
+        beep_file=args.beep_file,
     )
     transcription = TranscriptionConfig(
         model_size=args.model_size,
